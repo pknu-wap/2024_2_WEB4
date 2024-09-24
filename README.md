@@ -9,8 +9,8 @@
 # 😺 + 😍 = 😻
 <table>
     <tr>
+        <th>이름</th>
         <th>역할</th>
-        <th>설명</th>
         <th>스택</th>
     </tr>
     <tr>
@@ -27,8 +27,8 @@
         <td><img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/PyTorch_logo_black.svg" width="100"/></td>
     </tr>
     <tr>
-        <td>PM</td>
         <td>이찬이</td>
+        <td>PM</td>
         <td></td>
     </tr>
 </table>
