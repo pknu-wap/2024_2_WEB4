@@ -1,9 +1,11 @@
+/* logo.js */
 .logo {
     font-size: 50px;
     font-weight: bold;
     margin-top: 88px;
 }
 
+/* main.js */
 form {
     display: flex;
     flex-direction: column; 
@@ -35,31 +37,55 @@ label {
     text-align: center;
   }
 
-  .custom-file-upload:hover {
-    background-color: #45a049;
-  }
-
-  .custom-file-upload.selected {
-    background-color: #357a38; /* 선택된 상태에서 색상 변경 */
-  }
-
-  .file-name {
-    font-size: 14px;
-    color: #333;
-    margin-top: 5px;
-  }
-
-  #submitButton {
-    width: 250px;
-    padding: 10px 20px; 
-    border: none;
-    border-radius: "5px"; 
-    cursor: "pointer"; 
-    font-size: "14px";
-    margin: 0 auto;
+.custom-file-upload:hover {
+  background-color: #45a049;
 }
+
+.custom-file-upload.selected {
+  background-color: #357a38;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+#submitButton {
+  width: 250px;
+  padding: 10px 20px; 
+  border: none;
+  border-radius: "5px"; 
+  cursor: "pointer"; 
+  font-size: "14px";
+  margin: 0 auto;
+}
+
 #submitButton:hover {
     background-color: #333;
     color: white;
     transition: background-color 0.3s ease;
   }
+
+/* loading.js */
+#loadingDiv{
+  margin-top: 100px;
+}
+#loadingRing {
+  width: 300px;
+  animation: spin 1.5s linear infinite; 
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loadingText {
+  margin-top: 50px;
+
+}
