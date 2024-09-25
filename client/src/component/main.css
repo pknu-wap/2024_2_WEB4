@@ -1,0 +1,65 @@
+.logo {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 88px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    width: 320px;
+    margin: 0 auto;
+}
+
+label {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  .custom-file-upload:hover {
+    background-color: #45a049;
+  }
+
+  .custom-file-upload.selected {
+    background-color: #357a38; /* 선택된 상태에서 색상 변경 */
+  }
+
+  .file-name {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+  }
+
+  #submitButton {
+    width: 250px;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: "5px"; 
+    cursor: "pointer"; 
+    font-size: "14px";
+    margin: 0 auto;
+}
+#submitButton:hover {
+    background-color: #333;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
