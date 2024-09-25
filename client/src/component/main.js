@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-
-  
+import { useNavigate } from 'react-router-dom';
 function Main() {
   const [inputImageName, setInputImageName] = useState("선택된 파일 없음");
   const [targetImageName, setTargetImageName] = useState("선택된 파일 없음");
   const [inputFileSelected, setInputFileSelected] = useState(false);
   const [targetFileSelected, setTargetFileSelected] = useState(false);
+  const navigate = useNavigate();
 
+  const navigateToLoading = () => {
+    navigate("/loading");
+  };
+  
   const handleFileChange = (event, setFileName, setFileSelected) => {
     const file = event.target.files[0];
     if (file) {
@@ -60,7 +64,11 @@ function Main() {
                 <span className="file-name">{targetImageName}</span>
             </div>
             {inputFileSelected && targetFileSelected && (
-                <button id="submitButton">생성하기😻</button>
+                <button 
+                  id="submitButton"
+                  onClick={navigateToLoading}>
+                    생성하기😻
+                </button>
             )}
         </form>
     </>

@@ -1,4 +1,4 @@
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Main from './component/main.js';
 import Logo from './component/logo.js';
@@ -7,11 +7,16 @@ import './App.css';
 
 function App() {
 	return (
-		<div className="App">
-			<Logo />
-       		<Main />
-        	<Loading />
-		</div>
+		<BrowserRouter>
+			<div className="App">
+				<Logo />
+				<Routes>
+					<Route path="/" element={<Main />} />
+					<Route path="/loading" element={<Loading />} />
+				</Routes>
+			</div>
+		</BrowserRouter>
+		
 	);
 }
 

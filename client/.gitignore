@@ -1,13 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-*/node_modules*
-*node_modules/*
-
+/node_modules
 /.pnp
 .pnp.js
-*/package-lock.json
-*/package.json
 
 # testing
 /coverage
@@ -25,13 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Node version manager
-.nvmrc
-
-# logs
-*.log
-
-# Operating system files
-.DS_Store
-__pycache__
