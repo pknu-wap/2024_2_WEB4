@@ -1,9 +1,19 @@
 import hashlib
 import os
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 
 app = FastAPI()
+
+# CORS 설정
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # 허용할 출처
+    allow_credentials=True,
+    allow_methods=["*"],  # 모든 HTTP 메소드 허용
+    allow_headers=["*"],  # 모든 헤더 허용
+)
 
 UPLOAD_FOLDER = "./uploads/"
 
@@ -26,4 +36,4 @@ async def upload_images(files: List[UploadFile] = File(...)):
         
         file_paths.append(file_location)
 
-    return {"message": "Files successfully uploaded", "file_paths": file_paths}
+    return {"message": "Files successfully uploaded"}

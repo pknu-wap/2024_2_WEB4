@@ -12,7 +12,6 @@ function Main() {
   const navigateToLoading = () => {
     // 파일 업로드 및 서버 요청 함수 호출
     uploadImages();
-    navigate("/loading");
   };
   
   const handleFileChange = (event, setFileName, setFile, setFileSelected) => {
