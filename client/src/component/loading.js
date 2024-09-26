@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import loadingRing from '../const/loadingring.png'; 
 
-const LoadingComponent = () => {
+const Loading = () => {
   const [loadingText, setLoadingText] = useState("");
   const [dotCount, setDotCount] = useState(0);
 
@@ -25,4 +25,4 @@ const LoadingComponent = () => {
   );
 };
 
-export default LoadingComponent;
+export default Loading;

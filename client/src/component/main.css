@@ -1,41 +1,43 @@
 /* logo.js */
 .logo {
-    font-size: 50px;
-    font-weight: bold;
-    margin-top: 88px;
+  font-size: 5vw; 
+  font-weight: bold;
+  margin-top: 10vh;
 }
 
 /* main.js */
 form {
-    display: flex;
-    flex-direction: column; 
-    gap: 10px; 
-    width: 320px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+  gap: 1em;
+  width: 90%; 
+  max-width: 320px; 
+  margin: 0 auto;
 }
 
 label {
-    width: 250px;
-    margin: 0 auto;
+  width: 80%; 
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 .file-upload {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .custom-file-upload {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-  }
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
 
 .custom-file-upload:hover {
   background-color: #45a049;
@@ -46,46 +48,68 @@ label {
 }
 
 .file-name {
-  font-size: 14px;
+  font-size: 0.9em; 
   color: #333;
   margin-top: 5px;
 }
 
 #submitButton {
-  width: 250px;
-  padding: 10px 20px; 
+  width: 80%; 
+  max-width: 250px;
+  padding: 10px 20px;
   border: none;
-  border-radius: "5px"; 
-  cursor: "pointer"; 
-  font-size: "14px";
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 1em;
   margin: 0 auto;
 }
 
 #submitButton:hover {
-    background-color: #333;
-    color: white;
-    transition: background-color 0.3s ease;
-  }
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s ease;
+}
 
 /* loading.js */
-#loadingDiv{
-  margin-top: 100px;
+#loadingDiv {
+  margin-top: 10vh; 
+  text-align: center;
 }
+
 #loadingRing {
-  width: 300px;
+  width: 30vw; 
+  max-width: 250px; 
   animation: spin 1.5s linear infinite; 
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg); 
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+      transform: rotate(0deg); 
+  }
+  to {
+      transform: rotate(360deg);
+  }
 }
 
 #loadingText {
-  margin-top: 50px;
+  margin-top: 5vh; 
+  font-size: 2vw; 
+}
 
+@media (max-width: 768px) {
+  .logo {
+      font-size: 6vw;
+  }
+  
+  form {
+      width: 95%;
+  }
+
+  #loadingRing {
+      width: 40vw;
+  }
+
+  #loadingText {
+      font-size: 3vw; 
+  }
 }
