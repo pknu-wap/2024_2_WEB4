@@ -1,3 +1,15 @@
+/* 공통 */
+button {
+  width: 80%; 
+  max-width: 250px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 1em;
+  margin: 0 auto;
+}
+
 /* logo.js */
 .logo {
   font-size: 5vw; 
@@ -30,7 +42,7 @@ label {
 .custom-file-upload {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: gray;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -40,28 +52,17 @@ label {
 }
 
 .custom-file-upload:hover {
-  background-color: #45a049;
+  background-color: #333;
 }
 
 .custom-file-upload.selected {
-  background-color: #357a38;
+  background-color: #333;
 }
 
 .file-name {
   font-size: 0.9em; 
   color: #333;
   margin-top: 5px;
-}
-
-#submitButton {
-  width: 80%; 
-  max-width: 250px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px; 
-  cursor: pointer; 
-  font-size: 1em;
-  margin: 0 auto;
 }
 
 #submitButton:hover {
@@ -112,4 +113,22 @@ label {
   #loadingText {
       font-size: 3vw; 
   }
+}
+
+/* download.js*/
+.buttonSet{
+  display: flex;
+  flex-direction: column; 
+  margin-top: 2vh;
+  gap: 2vh;
+}
+#downloadButton:hover {
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+#mainButton:hover {
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s ease;
 }

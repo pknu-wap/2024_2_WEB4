@@ -3,6 +3,7 @@ import React from 'react';
 import Main from './component/main.js';
 import Logo from './component/logo.js';
 import Loading from './component/loading.js';
+import Download from './component/download.js';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Main />} />
 					<Route path="/loading" element={<Loading />} />
+					<Route path="/download" element={<Download />} />
 				</Routes>
 			</div>
 		</BrowserRouter>
