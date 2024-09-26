@@ -20,7 +20,7 @@
     </tr>
     <tr>
         <td>BE</td>
-        <td><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" width="100"/></td>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/FastAPI_logo.svg" width="100"/></td>
     </tr>
     <tr>
         <td>AI</td>
