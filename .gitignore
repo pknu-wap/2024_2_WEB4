@@ -35,3 +35,4 @@ yarn-error.log*
 # Operating system files
 .DS_Store
 __pycache__
+uploads
