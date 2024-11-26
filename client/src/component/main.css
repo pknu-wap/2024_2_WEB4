@@ -132,3 +132,6 @@ label {
   color: white;
   transition: background-color 0.3s ease;
 }
+.downloadImg{
+  width: 50vw;
+}
