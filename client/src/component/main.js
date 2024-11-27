@@ -28,7 +28,7 @@ function Main() {
   };
 
   const handleCheckboxChange = () => {
-    setIsDyed(!isDyed); // 체크박스 상태 토글
+    setIsDyed(!isDyed);
   };
 
   const uploadImages = async () => {
@@ -56,7 +56,6 @@ function Main() {
       if (response.ok) {
         const data = await response.json();
   
-        // Second API call to /ganz/run/ with the file locations
         try {
           const runResponse = await fetch(`${SERVER_URL}/ganz/inference/`, {
             method: 'POST',
@@ -66,7 +65,6 @@ function Main() {
             body: JSON.stringify({
               face_img: data.file_location[0],
               shape_img: data.file_location[1],
-              // 염색 여부에 따라 color_img 값 설정
               color_img: isDyed ? data.file_location[2] : data.file_location[1], 
             }),
             mode: 'cors',
@@ -95,6 +93,8 @@ function Main() {
 
   return (
     <>
+      <a href="/guideline" className="guidelineButton">사용법</a>
+
       <p>미용실 갈 때 머리 고민하지 마세요!</p>
       <p> 1) 본인 사진😺과</p>
       <p> 2) 원하는 스타일😍만 보여주시면,</p>
@@ -136,7 +136,6 @@ function Main() {
           <span className="file-name">{targetImageName}</span>
         </div>
 
-        {/* 염색 여부 체크박스 추가 */}
         <div>
           <input 
             type="checkbox" 
@@ -147,7 +146,6 @@ function Main() {
           <label htmlFor="dyedCheckbox">염색을 할 거예요!</label>
         </div>
 
-        {/* 염색이 선택되었을 때만 reference 이미지 파일 업로드 추가 */}
         {isDyed && (
           <div>
             <label 
@@ -170,7 +168,7 @@ function Main() {
         {inputFile && targetFile && (
           <button 
             id="submitButton"
-            type="button" // prevent form submission
+            type="button" 
             onClick={navigateToLoading}>
               생성하기😻
           </button>

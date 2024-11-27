@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { SERVER_URL } from './config';
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { SERVER_URL } from "./config";
+import { QRCodeSVG } from "qrcode.react"; // QR 코드 라이브러리
 
 function Download() {
   const navigate = useNavigate();
@@ -12,22 +13,21 @@ function Download() {
   const resultPath = queryParams.get("results");
 
   const navigateToMain = () => {
-    navigate('/');
+    navigate("/");
   };
 
   useEffect(() => {
     const fetchImage = async () => {
       if (resultPath) {
         try {
-          // 백엔드에서 이미지 직접 전송을 받아오는 방법
-          const response = await fetch(`${SERVER_URL}/ganz/download/?result_path=${encodeURIComponent(resultPath)}`);
-          
-          // Blob 형식으로 이미지를 받아와서 URL 생성
+          const response = await fetch(
+            `${SERVER_URL}/ganz/download/?result_path=${encodeURIComponent(resultPath)}`
+          );
+
           if (response.ok) {
             const blob = await response.blob();
-            const imageUrl = URL.createObjectURL(blob); // Blob 데이터를 URL로 변환
-            setImageUrl(imageUrl); // 이미지 URL 상태로 저장
-            console.log(imageUrl, resultPath, blob);
+            const imageUrl = URL.createObjectURL(blob);
+            setImageUrl(imageUrl);
           } else {
             console.error("Error fetching image:", await response.text());
           }
@@ -42,30 +42,41 @@ function Download() {
 
   const handleDownload = () => {
     if (imageUrl) {
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = imageUrl;
-      link.download = 'downloaded-image.jpg'; // 다운로드 파일명 지정
-      link.click(); // 클릭 이벤트로 다운로드 시작
+      link.download = "downloaded-image.jpg";
+      link.click();
     } else {
-      console.error('No image URL available for download');
+      console.error("No image URL available for download");
     }
   };
-  console.log(imageUrl)
+
+  const qrUrl = `${window.location.origin}/download?results=${encodeURIComponent(resultPath)}`;
+
   return (
     <>
       {imageUrl ? (
-        <img src={imageUrl} alt="Downloaded from server" className='downloadImg' />
+        <img src={imageUrl} alt="Downloaded from server" className="downloadImg" />
       ) : (
         <p>Loading image...</p>
       )}
+      <div className="qrContainer" style={{ margin: "20px", textAlign: "center" }}>
+        <QRCodeSVG 
+          value={qrUrl} 
+          size={100} 
+          bgColor="#ffffff" 
+          fgColor="#000000" 
+        />
+      </div>
       <div className="buttonSet">
         <button id="downloadButton" onClick={handleDownload}>
           다운로드!
         </button>
         <button id="mainButton" onClick={navigateToMain}>
           메인화면으로
-        </button>    
+        </button>
       </div>
+
     </>
   );
 }

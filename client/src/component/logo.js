@@ -4,7 +4,10 @@ import './main.css';
 function Logo() {
 
     return (
-            <div className="logo"> <i>GAN-Z</i> </div>
+            <div className="logo"> 
+                <i>GAN-Z</i>
+                <hr/> 
+            </div>
     );
 }
 
