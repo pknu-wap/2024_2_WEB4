@@ -93,7 +93,7 @@ function Main() {
 
   return (
     <>
-      <a href="/guideline" className="guidelineButton">사용법</a>
+      <a href="/guideline" className="guidelineButton">처음이신가요? 눌러주세요.</a>
 
       <p>미용실 갈 때 머리 고민하지 마세요!</p>
       <p> 1) 본인 사진😺과</p>
