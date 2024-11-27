@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import help1 from "../const/help1.png"
 import help2 from "../const/help2.png"
 import help3 from "../const/help3.png"
 import help4 from "../const/help4.png"
 import help5 from "../const/help5.png"
+import warning from "../const/warning.png"
 
 function Guideline() {
 
     const data = [
+      { image: warning, description: [
+        '!!!여권 사진 사용을 적극 권장합니다.!!!',
+        '!!!깨끗한 배경, 이마, 눈썹, 얼굴이 잘 드러날 수록 좋습니다.!!!',
+        '전신 사진을 사용하지 마십시오.', 
+        '안경 등 악세사리는 지양해주세요.',
+        '셀카도  잘 안 될 수 있습니다.',
+      ] },
       { image: help1, description: [
         '① 본인 사진을 선택합니다.',
         '② 원하는 헤어 스타일을 선택합니다.', 
